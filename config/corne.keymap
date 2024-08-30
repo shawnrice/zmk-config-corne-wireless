@@ -22,9 +22,6 @@
 #define RAISE 3
 #define NAV 4
 
-#define HYPER(key) LS(LC(LA(LG(key))))
-#define MEH(key)   LS(LC(LA(key)))
-
 / {
     chosen {
       zmk,matrix_transform = &five_column_transform;
@@ -56,26 +53,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&caps_word>;
-        };
-
-        hth: hold_tap_hyper {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_HYPER";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&HYPER>, <&kp>;
-        };
-
-        ht_meh: hold_tap_meh {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_MEH";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&MEH>, <&kp>;
         };
     };
         keymap {
